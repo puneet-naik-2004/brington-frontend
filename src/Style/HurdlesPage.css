@@ -1,0 +1,60 @@
+.hurdles-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #19b9a1,#ebf5f4, #ebf5f4);
+  color: white;
+  text-align: center;
+  /* padding: 40px 20px; */
+  overflow: hidden;
+}
+
+/* Top Section (Text) */
+.text-section {
+  margin-bottom: 50px;
+}
+
+.hurdles-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.hurdles-header {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #f5f5f5;
+}
+
+
+.images-section {
+  position: relative;
+  width: 100%;
+  height: 600px; /* increased space for images */
+}
+
+/* Base hurdles image */
+.hurdles-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;        /* makes image scale with screen width */
+  max-width: 1000px; /* max size for big screens */
+  height: auto;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+/* Scaling effect */
+.img1 { transform: translate(-50%, -50%) scale(1); z-index: 5; }
+.img2 { transform: translate(-50%, -50%) scale(0.85); z-index: 4; }
+.img3 { transform: translate(-50%, -50%) scale(0.7); z-index: 3; }
+.img4 { transform: translate(-50%, -50%) scale(0.55); z-index: 2; }
+.img5 { transform: translate(-50%, -50%) scale(0.4); z-index: 1; }

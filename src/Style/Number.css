@@ -1,0 +1,122 @@
+/* .two-rows-swiper {
+  background: #f3eeee;
+  padding: 50px;
+  text-align: center;
+}
+
+.row-title {
+  color: #0c0b09;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.row-swiper {
+  padding: 10px 0;
+}
+
+.number-box {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 400px;
+  height: 150px;
+  padding: 5px;
+  background: #fcf2f2;
+  border: 2px solid #0b0c0c;
+  border-radius: 60px;
+  color: #070808;
+  font-weight: 600;
+  font-size: 6rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.number-box:hover {
+  transform: translateY(-5px);
+}
+
+.number {
+  font-size: 6rem;
+  top: 0px;
+}
+
+.unit-text {
+  font-size: 2rem;
+  color: #0a0908;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #00ffcc;
+}
+
+.swiper-pagination-bullet {
+  background: #b4a4a4 !important;
+} */
+
+
+
+
+
+.two-rows-swiper {
+  background: #f3eeee;
+  padding: 40px 20px; /* mobile-friendly padding */
+  text-align: center;
+}
+
+.row-title {
+  color: #0c0b09;
+  font-size: clamp(1.5rem, 2vw, 2rem); /* scales with screen */
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.row-swiper {
+  padding: 10px 0;
+}
+
+.number-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;                   /* responsive */
+  max-width: 400px;              /* limit on large screens */
+  height: clamp(100px, 15vw, 150px); /* resizes with screen */
+  padding: 10px 20px;
+  background: #fcf2f2;
+  border: 2px solid #0b0c0c;
+  border-radius: 60px;
+  color: #070808;
+  font-weight: 600;
+  font-size: clamp(2rem, 8vw, 6rem); /* responsive */
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin: 0 auto;                /* center in slide */
+}
+
+.number-box:hover {
+  transform: translateY(-5px);
+}
+
+.number {
+  font-size: clamp(2rem, 8vw, 6rem);
+}
+
+.unit-text {
+  font-size: clamp(1rem, 4vw, 2rem);
+  color: #0a0908;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #00ffcc;
+}
+
+.swiper-pagination-bullet {
+  background: #b4a4a4 !important;
+}

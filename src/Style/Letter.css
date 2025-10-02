@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+/* Desktop layout */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Left side with background */
+.left-panel {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid #000;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.big-letter {
+  font-size: clamp(4rem, 12vw, 8rem); /* scales with viewport */
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+/* Right side letter thumbnails */
+/* .right-panel {
+  width: 40%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: #111;
+  padding: 10px;
+  overflow-y: auto;
+} */
+
+.right-panel {
+  width: 40%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: #111;
+  padding: 10px;
+}
+
+
+.letter {
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  border-radius: 8px;
+  min-height: 100px;
+  transition: transform 0.3s, border 0.3s;
+}
+
+.letter:hover {
+  transform: scale(1.05);
+}
+
+.letter.selected {
+  border: 3px solid #00ffcc;
+}
+
+/* Info section */
+.project-info {
+  grid-column: span 3;
+  background: #222;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* ✅ Tablet View */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    width: 100%;
+    height: 50vh;
+    border-right: none;
+    border-bottom: 2px solid #000;
+  }
+
+  .right-panel {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr); /* more compact grid */
+    height: 50vh;
+  }
+
+  .letter {
+    min-height: 80px;
+  }
+}
+
+/* ✅ Mobile View */
+@media (max-width: 600px) {
+  .big-letter {
+    font-size: clamp(2rem, 20vw, 4rem);
+  }
+
+  .left-panel {
+    height: 40vh;
+  }
+
+  .right-panel {
+    height: auto;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0px;
+  }
+
+  .letter {
+    min-height: 70px;
+  }
+
+  .project-info {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}

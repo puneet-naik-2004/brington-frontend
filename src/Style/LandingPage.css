@@ -1,0 +1,137 @@
+/* .landing-page {
+  height: 100vh;
+  width: 100%;
+ background: url("../Images/Test Site Files Brington/imgi_2_11062b_36ee1ae10e6b4421bf01f123cc06c130f000.jpg");
+  background-size: cover;
+  position: relative;
+  color: rgb(236, 227, 227);
+  font-family: Arial, sans-serif;
+}
+
+
+.top-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.project-name {
+  font-size: 3.5rem;
+  font-weight:600;
+  margin: 0;
+}
+
+.client-name {
+  font-size: 1.5rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+
+.plus-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.plus-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+} */
+
+
+.landing-page {
+  height: 100vh;
+  width: 100%;
+  background: url("../Images/Test Site Files Brington/imgi_2_11062b_36ee1ae10e6b4421bf01f123cc06c130f000.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: rgb(236, 227, 227);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Top-left text */
+.top-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.project-name {
+  font-size: clamp(2rem, 6vw, 3.5rem);  /* scales between mobile & desktop */
+  font-weight: 600;
+  margin: 0;
+}
+
+.client-name {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Top-right + button */
+.plus-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+}
+
+/* ✅ Mobile view adjustments */
+@media (max-width: 768px) {
+  .top-left {
+    top: 15px;
+    left: 15px;
+  }
+
+  .plus-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-name {
+    font-size: 1.8rem;
+  }
+
+  .client-name {
+    font-size: 0.9rem;
+  }
+
+  .plus-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+}
