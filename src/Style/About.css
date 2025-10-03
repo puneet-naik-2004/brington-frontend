@@ -70,17 +70,61 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* 📱 Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .project-section {
+    padding: 30px 10px;
+  }
+
   .project-card {
     flex-direction: column;
+    max-width: 100%;
+    box-shadow: none; /* lighter look for mobile */
   }
 
   .project-image {
     padding: 10px;
   }
 
+  .project-image img {
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  .project-content {
+    padding: 15px;
+  }
+
+  .project-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .learn-more {
+    font-size: 0.9rem;
+  }
+}
+
+/* 📱 Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .project-section {
+    padding: 40px 15px;
+  }
+
+  .project-card {
+    flex-direction: column; /* stack on smaller tablets */
+    max-width: 90%;
+  }
+
+  .project-image {
+    padding: 15px;
+  }
+
   .project-content {
     padding: 20px;
+  }
+
+  .project-content p {
+    font-size: 0.95rem;
   }
 }

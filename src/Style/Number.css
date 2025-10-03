@@ -1,18 +1,16 @@
-
-
-
-
 .two-rows-swiper {
-  background-color:  #f7dada;
-  padding: 40px 20px; 
+  background-color: #f7dada;
+  padding: 40px 20px;
   text-align: center;
 }
- .row-head{
+
+.row-head {
   color: #070808;
   font-size: 20px;
   font-weight: 600;
-   margin-bottom: 15px;
- }
+  margin-bottom: 15px;
+  animation: fadeIn 1s ease;
+}
 
 .row-title {
   color: #0c0b09;
@@ -21,6 +19,7 @@
   margin-bottom: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  animation: fadeInUp 1s ease;
 }
 
 .row-swiper {
@@ -31,9 +30,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;                 
-  max-width: 350px;             
-  height: 120px; 
+  max-width: 350px;
+  height: 120px;
   padding: 10px 20px;
   background: transparent;
   border: 2px solid #0b0c0c;
@@ -42,17 +40,26 @@
   font-weight: 450;
   font-size: clamp(2rem, 8vw, 6rem);
   cursor: pointer;
-  transition: transform 0.2s;
-  margin: 0 auto;                
+  transition: transform 0.4s ease, opacity 0.6s ease;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.number-box.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .number-box:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
+  border-color: #00ffcc;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .number {
   font-size: 6.5rem;
-  
+  font-weight: 700;
 }
 
 .unit-text {
@@ -67,8 +74,21 @@
 
 .swiper-pagination-bullet {
   background: #b4a4a4 !important;
-} 
+}
 
+/* 🌟 Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-
-
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

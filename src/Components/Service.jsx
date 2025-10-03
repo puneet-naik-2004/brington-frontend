@@ -8,19 +8,19 @@ import BgImg from "../Images/Test Site Files Brington/imgi_2_c837a6_672a051f6664
 
 export default function ServicesSection() {
   return (
-    <div
-      className="services-container"
-      style={{
-        backgroundImage: `url(${BgImg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        width: "100%",
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+   <div 
+   className="services-container"
+    style={{ 
+     backgroundImage: `url(${BgImg})`,
+     backgroundSize: "cover", 
+     backgroundPosition: "center",
+      backgroundRepeat: "no-repeat", 
+      width: "auto",
+       minHeight: "100vh",
+       display: "flex", 
+       justifyContent: "center", 
+       alignItems: "center",
+       }}
     >
       <div className="services-content">
         <h1 className="title">Accomplish Anything in Developing</h1>
@@ -65,3 +65,4 @@ export default function ServicesSection() {
     </div>
   );
 }
+

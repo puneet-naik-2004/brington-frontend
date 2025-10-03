@@ -5,38 +5,56 @@
   overflow: hidden;
 }
 
+/* Stat Item */
 .stat-item {
   position: absolute;
   text-align: center;
   transform: translate(-50%, -50%);
+  opacity: 0;
 }
 
 .stat-number {
-  font-size: 100px;
-  font-weight: 300;
+  font-size: 80px;
+  font-weight: 600;
   margin: 0;
-  color: #222;
+  color: #111;
+  letter-spacing: 2px;
+  text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .stat-text {
   font-size: 16px;
-  color: #444;
-  margin-top: 10px;
+  color: #333;
+  margin-top: 8px;
+  font-weight: 400;
 }
 
-/* Star */
+/* Star Effect */
 .star {
   position: absolute;
   width: 20px;
   height: 20px;
-  background: radial-gradient(circle, #ff0, #f0f, #00f);
+  background: radial-gradient(circle, #ff0, #ff4dff, #00f);
   border-radius: 50%;
-  box-shadow: 0 0 20px #ff0, 0 0 40px #f0f;
+  box-shadow: 0 0 20px #ff0, 0 0 40px #f0f, 0 0 60px #00f;
   pointer-events: none;
   z-index: 10;
+  opacity: 0;
+  animation: pulse 1.5s infinite alternate;
 }
 
-/* Path */
+@keyframes pulse {
+  from {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Path Styling */
 .curve {
   position: absolute;
   width: 100%;

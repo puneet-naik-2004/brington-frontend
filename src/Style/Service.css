@@ -107,6 +107,8 @@
 
 /* ✅ Mobile View Adjustments */
 @media (max-width: 768px) {
+
+  
   .services-grid {
     grid-template-columns: 1fr; /* stack vertically */
     gap: 30px;
@@ -140,4 +142,5 @@
     width: 100%; /* full width button on phones */
     max-width: 260px;
   }
+  
 }

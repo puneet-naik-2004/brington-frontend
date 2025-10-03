@@ -1,187 +1,159 @@
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: #000;
-  color: #fff;
+/* base */
+:root{
+  --dark-bg: #e2e2f8;
+  --panel-border: #eadfcd;
+  --accent-1: #3cd0ea;
+  --accent-2: #8cdbfe;
+  --info-top: #99b5ff;
+  --info-bg: #353258;
 }
 
-/* Layout */
-.container {
+/* Page container */
+.letter-page {
   display: flex;
-  height: 120vh;
+  width: 100%;
+  min-height: 130vh;
   overflow: hidden;
+  background: #f6f5f1;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Left side */
+/* Left panel (big letter) */
 .left-panel {
-  width: 50%;
+  width: 52%;
+  min-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-right: 2px solid var(--panel-border);
   background-size: cover;
   background-position: center;
-  transition: background-image 0.6s ease-in-out;
-  border-right: 2px solid #000;
+  box-shadow: 2px 0 44px rgba(224, 221, 182, 0.56) inset;
   position: relative;
+  padding: 40px 20px;
 }
 
-/* Big Letter Image */
-/* .big-letter-img {
-  max-width: 70%;
-  max-height: 70%;
-  animation: fadeSlideIn 0.7s ease forwards;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
-} */
-
-/* Continuous Rotation */
+/* big letter image — pop + rotate + bob are handled by GSAP, CSS adds drop shadow */
 .big-letter-img {
-  max-width: 50%;
-  max-height: 50%;
-  animation: fadeSlideIn 0.7s ease forwards, rotateLetter 8s linear infinite;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+  width: 84%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.14));
+  transform-origin: center;
+  will-change: transform, opacity;
 }
 
-/* Rotation Keyframes */
-@keyframes rotateLetter {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-/* Right panel */
-/* .right-panel {
-  width: 50%;
-  background: #111;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  overflow-y: auto;
-  border-left: 2px solid #000;
-} */
+/* Right panel grid */
 .right-panel {
-  width: 50%;
-  background: #f5eaea;
-  padding: 20px;
+  width: 48%;
+  background: var(--dark-bg);
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 boxes per row */
-  gap: 20px;
-  overflow-y: auto;
-  border-left: 2px solid #000;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr) 1.22fr;
+  border-left: 2px solid #dadada;
+  box-shadow: -3px 0 24px rgba(33,34,41,0.14) inset;
 }
 
-
-
-
-
-/* Text letters */
+/* each letter tile */
 .letter-text {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff3f3;
-  padding: 10px;
-  text-align: center;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  min-height: 16vh;
+  background: #18192a;
+  color: #fbfbfc;
+  font-weight: 700;
+  border: 1px solid rgba(35,36,42,0.9);
   cursor: pointer;
-  transition: 0.3s;
+  transition:
+    background 220ms cubic-bezier(.2,.9,.2,1),
+    color 200ms ease,
+    transform 260ms cubic-bezier(.3,1,.5,1.05),
+    box-shadow 260ms ease,
+    border 230ms ease;
+  display: flex;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.letter-text:hover {
-  color: #0c0a0a;
-  background:#f5efef
-}
-
+/* Hover / active styles — stronger glow + gradient border */
+.letter-text:hover,
+.letter-text:focus,
 .letter-text.selected {
-  color: #00ffcc;
-  background: rgba(0, 255, 204, 0.1);
-  border: 2px solid #00ffcc;
+  transform: translateY(-6px) scale(1.04);
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(243,247,253,0.98));
+  color: #0f2a6a;
+  border: 2px solid var(--accent-1);
+  box-shadow:
+    0 10px 30px rgba(32,58,122,0.10),
+    0 4px 14px rgba(60,208,234,0.12);
+  outline: none;
 }
 
-/* Info box */
+/* selected further tweak */
+.letter-text.selected {
+  border: 2.5px solid var(--accent-2);
+  box-shadow: 0 12px 32px rgba(124,196,255,0.14);
+}
+
+/* project info at bottom */
 .project-info {
-  margin-top: auto;
-  background: #1a1a1a;
-  padding: 15px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  
-}
-.project-info p,h3{
-color: white;
-}
-/* Animations */
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  grid-column: 1 / span 3;
+  align-self: end;
+  min-height: 140px;
+  background: var(--info-bg);
+  border-top: 4px solid var(--info-top);
+  color: #f7fcfe;
+  padding: 2rem 1.25rem;
+  border-radius: 1.1em 1.1em 0 0 / 1.8em 1.2em 0 0;
+  box-shadow: 0 0 28px rgba(49,59,102,0.15);
+  transform-origin: bottom center;
 }
 
-/* Responsive */
+/* small typography */
+.project-info h3 {
+  color: #9ec5ff;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+.project-info p {
+  margin: 0;
+  color: #fbfbff;
+  font-size: 0.97rem;
+  line-height: 1.45;
+}
+
+/* subtle tile separators for visual accuracy */
+.letter-text + .letter-text {
+  border-left: none;
+}
+
+/* responsive: stack panels for smaller screens */
 @media (max-width: 1024px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .left-panel {
-    width: 100%;
-    height: 50vh;
-    border-right: none;
-    border-bottom: 2px solid #000;
-  }
-
-  .right-panel {
-    width: 100%;
-    height: 50vh;
-  }
+  .letter-page { flex-direction: column; }
+  .left-panel { width: 100%; height: 46vh; min-height: 260px; border-right: none; border-bottom: 2px solid var(--panel-border); }
+  .right-panel { width: 100%; height: calc(100vh - 46vh); border-left: none; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); }
+  .project-info { min-height: 120px; padding: 1rem; }
 }
 
-@media (max-width: 600px) {
-  .big-letter-img {
-    max-width: 80%;
-    max-height: 60%;
-  }
-
-  .letter-text {
-    font-size: 1.5rem;
-  }
-}
-/* Text letters as boxes */
-.letter-text {
-  font-size: 5rem;
-  font-weight: 500;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-  background: #1e1e1e;           /* box background */
-  border: 2px solid #333;        /* border around box */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+/* tablet: 2 columns for letters */
+@media (max-width: 780px) {
+  .right-panel { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); }
+  .letter-text { font-size: 2.2rem; min-height: 80px; }
 }
 
-/* Hover effect */
-.letter-text:hover {
-  background: #dee6e4;
-  color: #000;
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(246, 252, 251, 0.5);
+/* mobile narrow: single column list for letters, info below */
+@media (max-width: 480px) {
+  .right-panel { grid-template-columns: 1fr; grid-template-rows: repeat(6, auto) 1fr; }
+  .letter-text { font-size: 1.6rem; min-height: 64px; padding: 14px; }
+  .big-letter-img { max-width: 92%; }
+  .project-info { padding: 0.9rem; min-height: 110px; }
 }
 
-/* Active (selected) */
-.letter-text.selected {
-  background: #e5f1ef;
-  color: #000;
-  border: 2px solid #daece9;
-  box-shadow: 0 0 20px rgba(214, 223, 221, 0.8);
-}
+/* Utility tweaks */
+.letter-text:active { transform: translateY(-2px) scale(1.02); }
