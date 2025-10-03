@@ -25,7 +25,7 @@ export default function Lock({ onUnlock }) {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter hardcore password"
+          placeholder="Enter password"
           required
         />
         <button type="submit">Unlock</button>
