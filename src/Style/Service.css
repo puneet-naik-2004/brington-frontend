@@ -111,6 +111,7 @@
     grid-template-columns: 1fr; /* stack vertically */
     gap: 30px;
   }
+  
 
   .services-list {
     text-align: center;

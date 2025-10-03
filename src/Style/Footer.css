@@ -146,3 +146,11 @@
     gap: 12px;
   }
 }
+.coffee-icon {
+  width: 20px;       /* adjust size */
+  height: 20px;
+  margin-left: 6px;  /* small spacing after text */
+  vertical-align: middle;
+  color: white;
+}
+

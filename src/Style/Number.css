@@ -1,76 +1,23 @@
-/* .two-rows-swiper {
-  background: #f3eeee;
-  padding: 50px;
-  text-align: center;
-}
-
-.row-title {
-  color: #0c0b09;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.row-swiper {
-  padding: 10px 0;
-}
-
-.number-box {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  width: 400px;
-  height: 150px;
-  padding: 5px;
-  background: #fcf2f2;
-  border: 2px solid #0b0c0c;
-  border-radius: 60px;
-  color: #070808;
-  font-weight: 600;
-  font-size: 6rem;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.number-box:hover {
-  transform: translateY(-5px);
-}
-
-.number {
-  font-size: 6rem;
-  top: 0px;
-}
-
-.unit-text {
-  font-size: 2rem;
-  color: #0a0908;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: #00ffcc;
-}
-
-.swiper-pagination-bullet {
-  background: #b4a4a4 !important;
-} */
-
 
 
 
 
 .two-rows-swiper {
-  background: #f3eeee;
-  padding: 40px 20px; /* mobile-friendly padding */
+  background-color:  #f7dada;
+  padding: 40px 20px; 
   text-align: center;
 }
+ .row-head{
+  color: #070808;
+  font-size: 20px;
+  font-weight: 600;
+   margin-bottom: 15px;
+ }
 
 .row-title {
   color: #0c0b09;
-  font-size: clamp(1.5rem, 2vw, 2rem); /* scales with screen */
-  font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: 600;
   margin-bottom: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -84,19 +31,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;                   /* responsive */
-  max-width: 400px;              /* limit on large screens */
-  height: clamp(100px, 15vw, 150px); /* resizes with screen */
+  width: 100%;                 
+  max-width: 350px;             
+  height: 120px; 
   padding: 10px 20px;
-  background: #fcf2f2;
+  background: transparent;
   border: 2px solid #0b0c0c;
   border-radius: 60px;
   color: #070808;
-  font-weight: 600;
-  font-size: clamp(2rem, 8vw, 6rem); /* responsive */
+  font-weight: 450;
+  font-size: clamp(2rem, 8vw, 6rem);
   cursor: pointer;
   transition: transform 0.2s;
-  margin: 0 auto;                /* center in slide */
+  margin: 0 auto;                
 }
 
 .number-box:hover {
@@ -104,7 +51,8 @@
 }
 
 .number {
-  font-size: clamp(2rem, 8vw, 6rem);
+  font-size: 6.5rem;
+  
 }
 
 .unit-text {
@@ -119,4 +67,8 @@
 
 .swiper-pagination-bullet {
   background: #b4a4a4 !important;
-}
+} 
+
+
+
+

@@ -1,32 +1,21 @@
 import React, { useState } from "react";
 import "../Style/Lock.css";
 
-export default function PasswordEntryPage() {
+export default function Lock({ onUnlock }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [unlocked, setUnlocked] = useState(false);
 
-  // 🔑 Change this to your hardcore password
   const HARDCORE_PASSWORD = "Brington@123";
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password === HARDCORE_PASSWORD) {
-      setUnlocked(true);
+      onUnlock();  // ✅ Tell App we’re unlocked
       setError("");
     } else {
       setError("Incorrect password. Try again.");
     }
   };
-
-  if (unlocked) {
-    return (
-      <div className="unlock-screen">
-        <h1>✅ Access Granted</h1>
-        <p>Welcome to the protected area!</p>
-      </div>
-    );
-  }
 
   return (
     <div className="password-wrapper">

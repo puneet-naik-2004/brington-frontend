@@ -1,5 +1,6 @@
 import React from "react";
 import "../Style/Footer.css";
+import CoffeeImg from "../Images/Test Site Files Brington/download (2).svg";
 
 export default function Footer() {
   return (
@@ -56,8 +57,11 @@ export default function Footer() {
       {/* Bottom Section */}
       <div className="footer-bottom">
         <p>© 2035 by Brington Inc</p>
-        <p>Built with love and caffeine ☕</p>
-        <button className="chat-btn">Chat with AI</button>
+         <p>
+    Built with love and 
+    <img src={CoffeeImg} alt="coffee" className="coffee-icon" />
+  </p>
+        
       </div>
     </footer>
   );

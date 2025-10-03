@@ -10,15 +10,15 @@
 /* Header / Navigation */
 .nav {
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: 50%;
   transform: translateX(-50%);
   width: 90%; /* fluid width instead of fixed 1200px */
   max-width: 1200px;
-  height: auto;
+  height: 50px;
   background-color: #f0622c; /* orange bar */
   padding: 12px 20px;
-  border-radius: 12px;
+  border-radius: 20px;
   text-align: center;
   z-index: 20;
 }
@@ -31,6 +31,7 @@
   gap: 20px;
   padding: 0;
   margin: 0;
+  position: relative;
 }
 
 .nav-links li {
@@ -84,7 +85,7 @@
 }
 
 .hero-content button {
-  background-color: #d59aff; /* pink/purple */
+  background-color: #ec1cae; /* pink/purple */
   color: white;
   padding: 15px 30px;
   font-size: clamp(1rem, 2vw, 1.2rem);
@@ -95,7 +96,7 @@
 }
 
 .hero-content button:hover {
-  background-color: #c057ff;
+  background-color: #5d9de7;
 }
 
 /* Responsive Adjustments */

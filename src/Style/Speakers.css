@@ -67,7 +67,7 @@
 } */
 
 
-
+/* 
 
 .speakers-section {
   padding: 50px 20px;
@@ -82,16 +82,16 @@
   color: black;
 }
 
-/* Grid for desktop/tablet */
+
 .speakers-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columns by default */
+  grid-template-columns: 1fr 1fr; 
   gap: 25px 50px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Speaker card row layout */
+
 .speaker-card {
   display: flex;
   align-items: center;
@@ -142,10 +142,156 @@
   color: #fff;
 }
 
+
+@media (max-width: 900px) {
+  .speakers-grid {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .speaker-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .speaker-img {
+    margin: 0 0 10px 0;
+  }
+
+  .speaker-info {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .linkedin-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+} */
+
+
+
+
+
+/* Animation for fade-in + slide-up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Speakers Section */
+.speakers-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: #fdfdfd;
+}
+
+.speakers-title {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: black;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Grid */
+.speakers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Card */
+.speaker-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  opacity: 0; /* hidden at start */
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Stagger effect: each card delayed slightly */
+.speaker-card:nth-child(1) { animation-delay: 0.1s; }
+.speaker-card:nth-child(2) { animation-delay: 0.2s; }
+.speaker-card:nth-child(3) { animation-delay: 0.3s; }
+.speaker-card:nth-child(4) { animation-delay: 0.4s; }
+.speaker-card:nth-child(5) { animation-delay: 0.5s; }
+.speaker-card:nth-child(6) { animation-delay: 0.6s; }
+.speaker-card:nth-child(7) { animation-delay: 0.7s; }
+.speaker-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* Speaker Image */
+.speaker-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.speaker-card:hover .speaker-img {
+  transform: scale(1.08); /* zoom on hover */
+}
+
+/* Info */
+.speaker-info {
+  flex: 1;
+  text-align: left;
+}
+
+.speaker-info h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.speaker-card:hover .speaker-info h3 {
+  color: #0073b1; /* LinkedIn blue highlight */
+}
+
+.speaker-info p {
+  margin: 3px 0 0;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* LinkedIn Button */
+.linkedin-btn {
+  border: 1px solid #333;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.linkedin-btn:hover {
+  background: #0073b1; /* LinkedIn blue */
+  color: #fff;
+  border-color: #0073b1;
+}
+
 /* 🔹 Responsive */
 @media (max-width: 900px) {
   .speakers-grid {
-    grid-template-columns: 1fr; /* single column for tablets */
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 }
