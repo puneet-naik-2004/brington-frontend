@@ -25,7 +25,13 @@ body {
   position: relative;
 }
 
-
+/* Big Letter Image */
+/* .big-letter-img {
+  max-width: 70%;
+  max-height: 70%;
+  animation: fadeSlideIn 0.7s ease forwards;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+} */
 
 /* Continuous Rotation */
 .big-letter-img {
@@ -46,10 +52,20 @@ body {
 }
 
 
-
-.right-panel {
+/* Right panel */
+/* .right-panel {
   width: 50%;
   background: #111;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+  border-left: 2px solid #000;
+} */
+.right-panel {
+  width: 50%;
+  background: #f5eaea;
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 boxes per row */

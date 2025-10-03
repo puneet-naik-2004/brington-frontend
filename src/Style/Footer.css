@@ -147,10 +147,11 @@
   }
 }
 .coffee-icon {
-  width: 20px;       /* adjust size */
-  height: 20px;
+  width: 50px;       /* adjust size */
+  height: 30px;
   margin-left: 6px;  /* small spacing after text */
   vertical-align: middle;
   color: white;
+  background-color: #e5ebea;
 }
 
