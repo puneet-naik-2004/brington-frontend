@@ -5,7 +5,7 @@ export default function Lock({ onUnlock }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const HARDCORE_PASSWORD = "Brington@123";
+  const HARDCORE_PASSWORD = "Puneet@123";
 
   const handleSubmit = (e) => {
     e.preventDefault();
