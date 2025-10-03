@@ -8,13 +8,13 @@ body {
 /* Layout */
 .container {
   display: flex;
-  height: 100vh;
+  height: 120vh;
   overflow: hidden;
 }
 
 /* Left side */
 .left-panel {
-  width: 40%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +64,7 @@ body {
   border-left: 2px solid #000;
 } */
 .right-panel {
-  width: 60%;
+  width: 50%;
   background: #111;
   padding: 20px;
   display: grid;

@@ -12,6 +12,7 @@ const Service = lazy(() => import("./Components/Service"));
 const HurdlesPage = lazy(() => import("./Components/HurdlesPage"));
 const StatsPage = lazy(() => import("./Components/StatsPage"));
 const Letter = lazy(() => import("./Components/Letter"));
+const Openai = lazy(() => import("./Components/Openai"));
 
 function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
@@ -33,6 +34,7 @@ function App() {
           <Letter />
           <Speakers />
           <Footer />
+          <Openai/>
         </Suspense>
       )}
     </div>
