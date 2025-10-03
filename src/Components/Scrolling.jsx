@@ -1,5 +1,5 @@
 import "../Style/Scrolling.css";
-import logo from "../Images/Test Site Files Brington/download (3).svg"; // <-- replace with your logo path
+import logo from "../Images/Test Site Files Brington/download (3).svg"; 
 
 export default function Scrolling() {
   return (

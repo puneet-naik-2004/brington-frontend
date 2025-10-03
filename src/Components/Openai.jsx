@@ -12,7 +12,7 @@ export default function ChatAI() {
     if (!input.trim()) return;
     setMessages([...messages, { role: "user", content: input }]);
 
-    // Dummy AI reply (replace with API call later)
+ 
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,

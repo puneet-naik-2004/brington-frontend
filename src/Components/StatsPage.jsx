@@ -9,31 +9,31 @@ export default function StatsPage() {
   const starRef = useRef(null);
   const numberRefs = useRef([]);
 
-  // Stats with positions + paths
+ 
   const stats = [
     {
       number: "1,034",
       text: "Sample Data about Sample Things",
       style: { top: "40%", left: "45%" },
-      path: "M 50,300 Q 200,50 350,300", // bottom curve
+      path: "M 50,300 Q 200,50 350,300", 
     },
     {
       number: "2",
       text: "Sample Data about Sample Things",
       style: { top: "30%", left: "30%" },
-      path: "M 10,200 Q 200,20 390,200", // top curve
+      path: "M 10,200 Q 200,20 390,200", 
     },
     {
       number: "54",
       text: "Sample Data about Sample Things",
       style: { top: "50%", left: "55%" },
-      path: "M 30,100 Q 200,250 370,100", // inverted curve
+      path: "M 30,100 Q 200,250 370,100", 
     },
     {
       number: "25",
       text: "Sample Data about Sample Things",
       style: { top: "60%", left: "40%" },
-      path: "M 20,150 Q 200,10 380,150", // diagonal curve
+      path: "M 20,150 Q 200,10 380,150", 
     },
   ];
 
